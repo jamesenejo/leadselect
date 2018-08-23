@@ -22,6 +22,41 @@ body {
     font-family: 'Abel', sans-serif;
     color: white;
 }
+.intro-container {
+    padding: 0 30px;
+}
+.intro {
+    padding: 80px 0;
+    text-align: center;
+    box-shadow: border-box;
+}
+.intro p {
+    width: 80%;
+    margin: auto;
+    font-size: 35px;
+    font-family: 'Abel', sans-serif;
+}
+.draw-btn-div {
+    padding: 50px 0;
+    text-align: center;
+    box-shadow: border-box;
+}
+.draw-btn {
+    background-color: #3359df;
+    padding: 10px 50px;
+    font-size: 25px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 0 rgba(0,0,0,.5);
+    box-shadow: border-box;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.draw-btn:hover {
+    box-shadow: 4px 4px 10px 0px rgba(0,0,0,.5);
+}
 
 @keyframes spin {
     100% {

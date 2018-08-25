@@ -11,7 +11,6 @@ const jobs = () => {
 
     // Run selection
     cron.schedule('0 * * * * *', () => {
-        console.log('>>>>>>>>>>>> 1st second: selecting');
         Leaders.all()
             .then((data) => {
                 let { unselected, selected, current } = data[0].dataValues;
@@ -51,8 +50,7 @@ const jobs = () => {
             });
     });
 
-    cron.schedule('31 * * * * *', () => {
-        console.log('>>>>>>>>>>>> 31st second: Updating');
+    cron.schedule('30 * * * * *', () => {
         Leaders.all()
             .then((data) => {
                 const current = data[0].dataValues.nextweek;

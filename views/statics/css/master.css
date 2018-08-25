@@ -24,7 +24,7 @@ h1, h2 {
     vertical-align: middle;
 }
 .container {
-    padding: 0 20%;
+    text-align: center;
 }
 .team {
     margin: 30px auto 60px;
@@ -43,13 +43,13 @@ h1, h2 {
 }
 .current-leader, .next-week {
     background-color: white;
-    width: 50%;
+    width: 350px;
     margin: auto;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 2px 2px 3px 0 rgba(0,0,0,.5);
 }
-.current-leader h2, .next-week h2 {
+.current-leader h2, .next-week h2, .label {
     color: rgb(120,120,120);
 }
 .current-leader p, .next-week p {
@@ -60,6 +60,15 @@ h1, h2 {
     margin-top: 50px;
 }
 
+.timer div {
+    display: inline-block;
+    width: 70px;
+    position: relative;
+}
+.label {
+    position: absolute;
+    left: 5px;
+}
 
 .fa-spinner {
     font-size: 20px;
@@ -90,5 +99,37 @@ h1, h2 {
 @keyframes spin {
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .current-leader, .next-week {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .team {
+        margin: 15px auto;
+    }
+    .team h2 {
+        font-size: 40px;
+    }
+    .team p {
+        font-size: 20px;
+    }
+    .current-leader, .next-week {
+        width: 290px;
+        padding: 5px;
+    }
+    .current-leader p, .next-week p {
+        margin: 20px 0 0;
+        font-size: 33px;
+    }
+    .next-week {
+        margin: 40px auto;
+    }
+    .timer div {
+        width: 50px;
     }
 }

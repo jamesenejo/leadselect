@@ -1,10 +1,12 @@
 $(document).ready(() => {
     let leaderInfo;
+    let next30secs;
     const checkServer = () => {
         fetch('/leader')
             .then(res => res.json())
             .then(res => {
                 leaderInfo = res.data;
+                next30secs = new Date().getTime() + 30000;
             });
     };
     checkServer();
@@ -14,15 +16,14 @@ $(document).ready(() => {
 
 
     const displayInfo = () => {
-        if (!leaderInfo) {
+        if (!leaderInfo || !next30secs) {
             return;
         }
 
-        let { current, nextweek, nextDrawDate } = leaderInfo;
+        let { current, nextweek } = leaderInfo;
 
-        const DateOfNextDraw = new Date(nextDrawDate.split(' ')[0]).getTime();
         const now = new Date().getTime();
-        const difference = DateOfNextDraw - now;
+        const difference = next30secs - now;
 
         const days = Math.floor(difference/(1000 * 60 * 60 * 24));
         const hrs = Math.floor((difference % (1000 * 60 * 60 * 24))/(1000 * 60 * 60));
@@ -49,7 +50,7 @@ $(document).ready(() => {
         </div>`
 
         if (nextweek === 'Pending') {
-            nextweek = timerHTML;
+            nextweek = `<p>New leader in: ${secs}s</p>`;
         } else {
             nextweek = `<p>${nextweek}</p>`
         }

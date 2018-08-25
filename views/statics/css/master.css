@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: 'Abel', sans-serif;
+    background-color: rgb(246,249,250);
+}
+h1, h2 {
+    margin: 0;
+}
+.navigation {
+    background-color: #3359df;
+    color: white;
+}
+.brand {
+    width: 40px;
+    padding: 5px 5px 5px 10px;
+    box-shadow: border-box;
+}
+.brand-img {
+    width: 100%;
+    animation: spin 10s infinite linear;
+}
+.brand, .navigation h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+.container {
+    padding: 0 20%;
+}
+.team {
+    margin: 30px auto 60px;
+    padding: 10px 0;
+    text-align: center;
+}
+.team h2 {
+    font-size: 50px;
+}
+.team p {
+    margin: 0;
+    font-size: 25px;
+}
+.wrapper {
+    text-align: center;
+}
+.current-leader, .next-week {
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 0 rgba(0,0,0,.5);
+}
+.current-leader h2, .next-week h2 {
+    color: rgb(120,120,120);
+}
+.current-leader p, .next-week p {
+    margin: 10px 0 0;
+    font-size: 40px;
+}
+.next-week {
+    margin-top: 50px;
+}
+
+
+.fa-spinner {
+    font-size: 20px;
+    color: #3359df;
+}
+/* .draw-btn-div {
+    padding: 50px 0;
+    text-align: center;
+    box-shadow: border-box;
+}
+.draw-btn {
+    background-color: #3359df;
+    padding: 10px 50px;
+    font-size: 25px;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 0 rgba(0,0,0,.5);
+    box-shadow: border-box;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.draw-btn:hover {
+    box-shadow: 4px 4px 10px 0px rgba(0,0,0,.5);
+} */
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

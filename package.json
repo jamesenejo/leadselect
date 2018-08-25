@@ -1,0 +1,38 @@
+{
+  "name": "leadselect",
+  "version": "1.0.0",
+  "description": "A simple application for randomly selecting a leader for the week.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --watch server --exec NODE_ENV=development babel-node -- server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesenejo/leadselect.git"
+  },
+  "author": "Enejo James",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesenejo/leadselect/issues"
+  },
+  "homepage": "https://github.com/jamesenejo/leadselect#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "node-cron": "^1.2.1",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "nodemon": "^1.18.3"
+  }
+}

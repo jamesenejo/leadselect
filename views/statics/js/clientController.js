@@ -4,7 +4,6 @@ $(document).ready(() => {
         fetch('/leader')
             .then(res => res.json())
             .then(res => {
-                console.log(res.data);
                 leaderInfo = res.data;
             });
     };

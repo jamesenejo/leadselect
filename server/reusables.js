@@ -6,7 +6,7 @@ const reusables = {
         ];
         let formDateFormat;
 
-        const nextFriday = new Date(new Date().getTime() + 604800000);
+        const nextFriday = new Date(new Date().getTime() + 30000);
         const [weekDay, month, date, year] = nextFriday.toDateString().split(' ');
 
         weekDay.toString(); // Just to avoid eslint error

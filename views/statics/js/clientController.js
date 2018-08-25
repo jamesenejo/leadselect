@@ -10,7 +10,7 @@ $(document).ready(() => {
     checkServer();
 
     // Check server every day for update
-    window.setInterval(checkServer, (1000 * 60 * 60 * 24));
+    window.setInterval(checkServer, (1000 * 30));
 
 
     const displayInfo = () => {

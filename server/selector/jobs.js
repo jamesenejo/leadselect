@@ -6,11 +6,8 @@ const { Leaders } = models;
 const { genRandomNumber, getNextFriday } = reusables;
 
 const jobs = () => {
-    // Wake server up
-    cron.schedule('58 23 * * Thursday', () => fetch('/leader'));
-
     // Run selection
-    cron.schedule('0 0 * * Friday', () => {
+    cron.schedule('0 * * * * *', () => {
         Leaders.all()
             .then((data) => {
                 let { unselected, selected, current } = data[0].dataValues;
@@ -50,7 +47,7 @@ const jobs = () => {
             });
     });
 
-    cron.schedule('0 0 * * Monday', () => {
+    cron.schedule('30 * * * * *', () => {
         Leaders.all()
             .then((data) => {
                 const current = data[0].dataValues.nextweek;

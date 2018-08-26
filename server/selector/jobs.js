@@ -8,6 +8,7 @@ const { genRandomNumber, getNextFriday } = reusables;
 const jobs = () => {
     // Wake server up
     cron.schedule('58 23 * * Thursday', () => fetch('/leader'));
+    cron.schedule('58 23 * * Sunday', () => fetch('/leader'));
 
     // Run selection
     cron.schedule('0 0 * * Friday', () => {

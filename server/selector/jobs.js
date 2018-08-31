@@ -51,7 +51,7 @@ const jobs = () => {
             });
     });
 
-    cron.schedule('*/3 * * * *', () => {
+    cron.schedule('*/6 * * * *', () => {
         Leaders.all()
             .then((data) => {
                 const current = data[0].dataValues.nextweek;

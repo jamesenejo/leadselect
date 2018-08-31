@@ -11,7 +11,7 @@ const jobs = () => {
     cron.schedule('58 23 * * Sunday', () => fetch('/leader'));
 
     // Run selection
-    cron.schedule('*/5 * * * *', () => {
+    cron.schedule('0 0 * * Friday', () => {
         Leaders.all()
             .then((data) => {
                 let { unselected, selected, current } = data[0].dataValues;
@@ -51,7 +51,7 @@ const jobs = () => {
             });
     });
 
-    cron.schedule('*/6 * * * *', () => {
+    cron.schedule('0 0 * * Monday', () => {
         Leaders.all()
             .then((data) => {
                 const current = data[0].dataValues.nextweek;

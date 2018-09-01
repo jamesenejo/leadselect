@@ -1,17 +1,11 @@
-import cron from 'node-cron';
 import models from '../models/index';
 import reusables from '../reusables';
 
 const { Leaders } = models;
 const { genRandomNumber, getNextFriday } = reusables;
 
-const jobs = () => {
-    // Wake server up
-    cron.schedule('58 23 * * Thursday', () => fetch('/leader'));
-    cron.schedule('58 23 * * Sunday', () => fetch('/leader'));
-
-    // Run selection
-    cron.schedule('0 0 * * Friday', () => {
+const jobs = {
+    selectALeader: () => {
         Leaders.all()
             .then((data) => {
                 let { unselected, selected, current } = data[0].dataValues;
@@ -49,19 +43,16 @@ const jobs = () => {
                 // Update database
                 return Leaders.update(updateData, { where: { id: 1 } });
             });
-    });
+    },
+    updater: () => Leaders.all()
+        .then((data) => {
+            const current = data[0].dataValues.nextweek;
+            const nextweek = 'Pending';
 
-    cron.schedule('0 0 * * Monday', () => {
-        Leaders.all()
-            .then((data) => {
-                const current = data[0].dataValues.nextweek;
-                const nextweek = 'Pending';
-
-                // Update current week's leader
-                return Leaders
-                    .update({ current, nextweek }, { where: { id: 1 } });
-            });
-    });
+            // Update current week's leader
+            return Leaders
+                .update({ current, nextweek }, { where: { id: 1 } });
+        })
 };
 
 export default jobs;

@@ -41,7 +41,7 @@ const jobs = {
                 };
 
                 // Update database
-                return Leaders.update(updateData, { where: { id: 1 } });
+                return Leaders.update(updateData, { where: { id: 2 } });
             });
     },
     updater: () => Leaders.all()
@@ -51,7 +51,7 @@ const jobs = {
 
             // Update current week's leader
             return Leaders
-                .update({ current, nextweek }, { where: { id: 1 } });
+                .update({ current, nextweek }, { where: { id: 2 } });
         })
 };
 

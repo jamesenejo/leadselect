@@ -9,7 +9,7 @@ const selectionController = {
         const now = new Date().toDateString();
         const [day] = now.split(' ');
 
-        Leaders.findById(1)
+        Leaders.findById(2)
             .then((data) => {
                 const { nextweek } = data;
 
